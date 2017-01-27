@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TheMobieDB.xcodeproj">
+      location = "self:/Users/jaimelaino/Projects/TheMovieDB/TheMovieDB/TheMovieDB.xcodeproj">
    </FileRef>
 </Workspace>

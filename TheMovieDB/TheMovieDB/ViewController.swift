@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  TheMobieDB
+//  TheMovieDB
 //
 //  Created by Jaime Laino on 1/24/17.
 //  Copyright © 2017 Globant. All rights reserved.

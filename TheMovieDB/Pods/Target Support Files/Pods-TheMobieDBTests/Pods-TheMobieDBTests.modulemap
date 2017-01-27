@@ -1,6 +1,0 @@
-framework module Pods_TheMobieDBTests {
-  umbrella header "Pods-TheMobieDBTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

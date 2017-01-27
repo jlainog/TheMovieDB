@@ -1,12 +1,12 @@
 platform :ios, '9.0'
 use_frameworks!
 
-target 'TheMobieDB' do
+target 'TheMovieDB' do
 
   pod 'Alamofire', '~> 4.0'
   pod 'AlamofireImage', '~> 3.1'
 
-  target 'TheMobieDBTests' do
+  target 'TheMovieDBTests' do
     inherit! :search_paths
   end
 end

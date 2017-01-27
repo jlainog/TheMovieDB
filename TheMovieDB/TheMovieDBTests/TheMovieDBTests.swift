@@ -1,15 +1,15 @@
 //
-//  TheMobieDBTests.swift
-//  TheMobieDBTests
+//  TheMovieDBTests.swift
+//  TheMovieDBTests
 //
 //  Created by Jaime Laino on 1/24/17.
 //  Copyright © 2017 Globant. All rights reserved.
 //
 
 import XCTest
-@testable import TheMobieDB
+@testable import TheMovieDB
 
-class TheMobieDBTests: XCTestCase {
+class TheMovieDBTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
