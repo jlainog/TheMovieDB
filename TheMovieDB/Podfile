@@ -5,6 +5,8 @@ target 'TheMovieDB' do
 
   pod 'Alamofire', '~> 4.0'
   pod 'AlamofireImage', '~> 3.1'
+  pod 'OHHTTPStubs'
+  pod 'OHHTTPStubs/Swift'
 
   target 'TheMovieDBTests' do
     inherit! :search_paths

@@ -15,6 +15,14 @@
 		F50BD2B21E37A41D008821F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F50BD2B11E37A41D008821F8 /* Assets.xcassets */; };
 		F50BD2B51E37A41D008821F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50BD2B31E37A41D008821F8 /* LaunchScreen.storyboard */; };
 		F50BD2C01E37A41D008821F8 /* TheMovieDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50BD2BF1E37A41D008821F8 /* TheMovieDBTests.swift */; };
+		F5E6D30A1E3B069200E91D66 /* ErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D3091E3B069200E91D66 /* ErrorData.swift */; };
+		F5E6D30D1E3B069F00E91D66 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D30B1E3B069F00E91D66 /* MoviesService.swift */; };
+		F5E6D30E1E3B069F00E91D66 /* TheMovieDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D30C1E3B069F00E91D66 /* TheMovieDBResponse.swift */; };
+		F5E6D3111E3B06B700E91D66 /* MoviesFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D30F1E3B06B700E91D66 /* MoviesFacade.swift */; };
+		F5E6D3121E3B06B700E91D66 /* TheMovieDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D3101E3B06B700E91D66 /* TheMovieDBService.swift */; };
+		F5E6D3151E3B06FA00E91D66 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D3131E3B06FA00E91D66 /* MovieData.swift */; };
+		F5E6D3161E3B06FA00E91D66 /* MoviesResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D3141E3B06FA00E91D66 /* MoviesResponseData.swift */; };
+		F5E6D3181E3B070400E91D66 /* MoviesFacadeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D3171E3B070400E91D66 /* MoviesFacadeTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		F50BD2BB1E37A41D008821F8 /* TheMovieDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50BD2BF1E37A41D008821F8 /* TheMovieDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBTests.swift; sourceTree = "<group>"; };
 		F50BD2C11E37A41D008821F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E6D3091E3B069200E91D66 /* ErrorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorData.swift; sourceTree = "<group>"; };
+		F5E6D30B1E3B069F00E91D66 /* MoviesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
+		F5E6D30C1E3B069F00E91D66 /* TheMovieDBResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheMovieDBResponse.swift; sourceTree = "<group>"; };
+		F5E6D30F1E3B06B700E91D66 /* MoviesFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesFacade.swift; sourceTree = "<group>"; };
+		F5E6D3101E3B06B700E91D66 /* TheMovieDBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheMovieDBService.swift; sourceTree = "<group>"; };
+		F5E6D3131E3B06FA00E91D66 /* MovieData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		F5E6D3141E3B06FA00E91D66 /* MoviesResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesResponseData.swift; sourceTree = "<group>"; };
+		F5E6D3171E3B070400E91D66 /* MoviesFacadeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesFacadeTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +114,8 @@
 		F50BD2A91E37A41D008821F8 /* TheMovieDB */ = {
 			isa = PBXGroup;
 			children = (
+				F5E6D3031E3B065A00E91D66 /* Core */,
+				F5E6D3061E3B067100E91D66 /* Movies */,
 				F50BD2AA1E37A41D008821F8 /* AppDelegate.swift */,
 				F50BD2AC1E37A41D008821F8 /* ViewController.swift */,
 				F50BD2AE1E37A41D008821F8 /* Main.storyboard */,
@@ -111,10 +129,64 @@
 		F50BD2BE1E37A41D008821F8 /* TheMovieDBTests */ = {
 			isa = PBXGroup;
 			children = (
+				F5E6D3171E3B070400E91D66 /* MoviesFacadeTest.swift */,
 				F50BD2BF1E37A41D008821F8 /* TheMovieDBTests.swift */,
 				F50BD2C11E37A41D008821F8 /* Info.plist */,
 			);
 			path = TheMovieDBTests;
+			sourceTree = "<group>";
+		};
+		F5E6D3031E3B065A00E91D66 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F5E6D3041E3B066100E91D66 /* Entities */,
+				F5E6D3051E3B066700E91D66 /* Services */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		F5E6D3041E3B066100E91D66 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F5E6D3091E3B069200E91D66 /* ErrorData.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		F5E6D3051E3B066700E91D66 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F5E6D3101E3B06B700E91D66 /* TheMovieDBService.swift */,
+				F5E6D30C1E3B069F00E91D66 /* TheMovieDBResponse.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		F5E6D3061E3B067100E91D66 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				F5E6D3081E3B068000E91D66 /* Entities */,
+				F5E6D3071E3B067900E91D66 /* Services */,
+			);
+			name = Movies;
+			sourceTree = "<group>";
+		};
+		F5E6D3071E3B067900E91D66 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F5E6D30B1E3B069F00E91D66 /* MoviesService.swift */,
+				F5E6D30F1E3B06B700E91D66 /* MoviesFacade.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		F5E6D3081E3B068000E91D66 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F5E6D3131E3B06FA00E91D66 /* MovieData.swift */,
+				F5E6D3141E3B06FA00E91D66 /* MoviesResponseData.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		F7E5B03B54F923C2F201540E /* Pods */ = {
@@ -245,7 +317,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		23A33131D6B77FECC980DEB2 /* [CP] Check Pods Manifest.lock */ = {
@@ -260,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9C9C4712CB8A4D1034F4CA3F /* [CP] Embed Pods Frameworks */ = {
@@ -330,7 +402,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E6D30A1E3B069200E91D66 /* ErrorData.swift in Sources */,
 				F50BD2AD1E37A41D008821F8 /* ViewController.swift in Sources */,
+				F5E6D3111E3B06B700E91D66 /* MoviesFacade.swift in Sources */,
+				F5E6D30D1E3B069F00E91D66 /* MoviesService.swift in Sources */,
+				F5E6D3161E3B06FA00E91D66 /* MoviesResponseData.swift in Sources */,
+				F5E6D3151E3B06FA00E91D66 /* MovieData.swift in Sources */,
+				F5E6D3121E3B06B700E91D66 /* TheMovieDBService.swift in Sources */,
+				F5E6D30E1E3B069F00E91D66 /* TheMovieDBResponse.swift in Sources */,
 				F50BD2AB1E37A41D008821F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E6D3181E3B070400E91D66 /* MoviesFacadeTest.swift in Sources */,
 				F50BD2C01E37A41D008821F8 /* TheMovieDBTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
