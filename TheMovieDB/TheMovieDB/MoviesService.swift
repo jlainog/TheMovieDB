@@ -10,7 +10,6 @@ import Foundation
 
 enum MoviesListType  {
     case nowPlaying
-    case latest
     case topRated
     case popular
     case upcomming
@@ -20,8 +19,7 @@ extension MoviesListType {
     var path : String {
         switch self {
         case .nowPlaying: return "/movie/now_playing"
-        case .latest: return "/movie/latest"
-        case .topRated: return "movie/top_rated"
+        case .topRated: return "/movie/top_rated"
         case .popular: return "/movie/popular"
         case .upcomming: return "/movie/upcoming"
         }
