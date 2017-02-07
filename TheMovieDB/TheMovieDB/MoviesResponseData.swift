@@ -23,9 +23,15 @@ struct MovieResponse : MovieResponseData {
     
     init(json: NSDictionary) {
         self.page = json["page"] as? Int ?? 0
-        self.results = json["results"] as? [MovieData] ?? []
         self.totalResults = json["total_results"] as? Int ?? 0
         self.totalPages = json["total_pages"] as? Int ?? 0
+        
+        guard let moviesJson = json["results"] as? [NSDictionary] else {
+            self.results = []
+            return
+        }
+        
+        self.results = moviesJson.enumerated().map { offset, element in Movie(json: element) }
     }
     
     init(page: Int,

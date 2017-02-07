@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MovieData {
+protocol MovieData : Parseable {
     var adult: NSNumber { get }
     var backdropPath: String { get }
     var budget: NSNumber { get }
@@ -52,4 +52,28 @@ struct Movie: MovieData {
     let video: NSNumber
     let voteAverage: NSNumber
     let voteCount: NSNumber
+    
+    init(json: NSDictionary) {
+        self.adult = json["adult"] as? NSNumber ?? NSNumber(value: 0)
+        self.backdropPath = json["backdrop_path"] as? String ?? ""
+        self.budget = json["budget"] as? NSNumber ?? NSNumber(value: 0)
+        self.homepage = json["homepage"] as? String ?? ""
+        self.imdbID = json["imdb_id"] as? String ?? ""
+        self.movieID = json["id"] as? NSNumber ?? NSNumber(value: 0)
+        self.originalLanguage = json["original_language"] as? String ?? ""
+        self.originalTitle = json["original_title"] as? String ?? ""
+        self.overview = json["overview"] as? String ?? ""
+        self.popularity = json["popularity"] as? NSNumber ?? NSNumber(value: 0)
+        self.posterPath = json["poster_path"] as? String ?? ""
+        self.releaseDate = json["release_date"] as? String ?? ""
+        self.revenue = json["revenue"] as? NSNumber ?? NSNumber(value: 0)
+        self.runtime = json["runtime"] as? NSNumber ?? NSNumber(value: 0)
+        self.status = json["status"] as? String ?? ""
+        self.tagline = json["tagline"] as? String ?? ""
+        self.title = json["title"] as? String ?? ""
+        self.video = json["video"] as? NSNumber ?? NSNumber(value: 0)
+        self.voteAverage = json["vote_average"] as? NSNumber ?? NSNumber(value: 0)
+        self.voteCount = json["vote_count"] as? NSNumber ?? NSNumber(value: 0)
+    }
+    
 }
