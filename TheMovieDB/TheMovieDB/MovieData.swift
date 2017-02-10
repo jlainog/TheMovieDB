@@ -55,7 +55,7 @@ struct Movie: MovieData {
     
     init(json: NSDictionary) {
         self.adult = json["adult"] as? NSNumber ?? NSNumber(value: 0)
-        self.backdropPath = json["backdrop_path"] as? String ?? ""
+        self.backdropPath = TheMovieDBService.imgBaseURL + (json["backdrop_path"] as? String ?? "")
         self.budget = json["budget"] as? NSNumber ?? NSNumber(value: 0)
         self.homepage = json["homepage"] as? String ?? ""
         self.imdbID = json["imdb_id"] as? String ?? ""
@@ -64,7 +64,7 @@ struct Movie: MovieData {
         self.originalTitle = json["original_title"] as? String ?? ""
         self.overview = json["overview"] as? String ?? ""
         self.popularity = json["popularity"] as? NSNumber ?? NSNumber(value: 0)
-        self.posterPath = json["poster_path"] as? String ?? ""
+        self.posterPath = TheMovieDBService.imgBaseURL + (json["poster_path"] as? String ?? "")
         self.releaseDate = json["release_date"] as? String ?? ""
         self.revenue = json["revenue"] as? NSNumber ?? NSNumber(value: 0)
         self.runtime = json["runtime"] as? NSNumber ?? NSNumber(value: 0)
