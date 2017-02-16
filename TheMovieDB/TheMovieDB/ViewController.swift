@@ -11,12 +11,13 @@ import AlamofireImage
 
 class ViewController: UIViewController {
 
-    @IBOutlet var movieListView : MovieListCollectionView!
+    @IBOutlet var containerView : UIView!
+    var movieListView : MovieListView!
     var movies : [MovieData]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        movieListView.listDelegate = self
+        configureMovieListView()
         MoviesFacade.retrieveMovieList(type: .topRated) {
             switch $0 {
             case .success(let response):
@@ -26,6 +27,19 @@ class ViewController: UIViewController {
                 break
             }
         }
+    }
+    
+    private func configureMovieListView() {
+        let frame = containerView.frame
+        let movieListView : MovieListView = UIDevice.current.userInterfaceIdiom == .pad ?
+            MovieListCollectionView(frame: frame) :
+            MovieListTableView(frame: frame)
+        let contentView = movieListView as! UIView
+        
+        movieListView.listDelegate = self
+        self.movieListView = movieListView
+        containerView.addSubview(contentView)
+        contentView.addConstraints(toFillSuperView: containerView)
     }
 }
 
@@ -37,11 +51,14 @@ extension ViewController: MovieListViewDelegate {
     
     func configure(cell: MovieListCell, atIndex index: Int) {
         let movie = movies![index]
+        let imageURLPath = UIDevice.current.userInterfaceIdiom == .pad ?
+            movie.posterPath :
+            movie.backdropPath
         
         cell.titleLabel.text = movie.title
-        cell.movieImageView.af_setImage(withURL: URL(string: movie.posterPath)!)
-        //cell.rateLabel.text = String(format: "%.1f", movie.voteAverage.floatValue)
-        //cell.yearLabel.text = movie.releaseDate
+        cell.movieImageView.af_setImage(withURL: URL(string: imageURLPath)!)
+//        cell.rateLabel.text = String(format: "%.1f", movie.voteAverage.floatValue)
+//        cell.yearLabel.text = movie.releaseDate
     }
     
     func didSelectRow(atIndex index: Int) {

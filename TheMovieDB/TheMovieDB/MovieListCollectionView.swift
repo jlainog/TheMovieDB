@@ -92,6 +92,6 @@ extension MovieListCollectionView : UICollectionViewDelegateFlowLayout {
         let blankSpaces = leftPadding + middleSpaceBetweenCells
         let width = collectionWidth / CGFloat(cellsPerRow) - blankSpaces
         
-        return CGSize(width: width, height: cellHeight!)
+        return CGSize(width: 140, height: cellHeight!)
     }
 }

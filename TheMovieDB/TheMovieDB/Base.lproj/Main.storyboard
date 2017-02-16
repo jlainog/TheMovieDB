@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,37 +21,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="POM-NX-uCs" customClass="MovieListCollectionView" customModule="TheMovieDB" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8Z-ri-LjY">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dSX-dj-4ww">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="j88-rE-zdf">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="POM-NX-uCs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0u3-Wy-cid"/>
-                            <constraint firstItem="POM-NX-uCs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="HRd-XC-kDO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="POM-NX-uCs" secondAttribute="bottom" id="tov-EM-ZT3"/>
-                            <constraint firstAttribute="trailing" secondItem="POM-NX-uCs" secondAttribute="trailing" id="za7-xt-EYq"/>
+                            <constraint firstItem="f8Z-ri-LjY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PeD-jt-xFK"/>
+                            <constraint firstItem="f8Z-ri-LjY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QeT-O2-Suv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f8Z-ri-LjY" secondAttribute="bottom" id="Uyg-Uz-jHB"/>
+                            <constraint firstAttribute="trailing" secondItem="f8Z-ri-LjY" secondAttribute="trailing" id="xDb-c4-wVk"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="movieListView" destination="POM-NX-uCs" id="55R-9C-FSZ"/>
+                        <outlet property="containerView" destination="f8Z-ri-LjY" id="Rpf-4h-5te"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
