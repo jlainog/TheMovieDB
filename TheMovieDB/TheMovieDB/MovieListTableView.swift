@@ -31,6 +31,7 @@ private extension MovieListTableView {
         self.delegate = self
         self.dataSource = self
         self.separatorInset = .zero
+        clipsToBounds = false
         self.register(nib,
                       forCellReuseIdentifier: cellIdentifier)
     }

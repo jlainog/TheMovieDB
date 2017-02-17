@@ -13,6 +13,8 @@ enum MoviesListType  {
     case topRated
     case popular
     case upcomming
+    
+    static let allCases = [nowPlaying, topRated, popular, upcomming]
 }
 
 extension MoviesListType {

@@ -18,28 +18,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMovieListView()
-        MoviesFacade.retrieveMovieList(type: .topRated) {
-            switch $0 {
-            case .success(let response):
-                self.movies = response.results
-                self.movieListView.reloadData()
-            default:
-                break
-            }
-        }
     }
     
-    private func configureMovieListView() {
-        let frame = containerView.frame
-        let movieListView : MovieListView = UIDevice.current.userInterfaceIdiom == .pad ?
-            MovieListCollectionView(frame: frame) :
-            MovieListTableView(frame: frame)
-        let contentView = movieListView as! UIView
-        
-        movieListView.listDelegate = self
-        self.movieListView = movieListView
-        containerView.addSubview(contentView)
-        contentView.addConstraints(toFillSuperView: containerView)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //segue for the popover configuration window
+        if segue.identifier == "MoviesCategories" {
+            let controller = segue.destination as! MoviesCategoriesViewController
+            
+            controller.preferredContentSize = CGSize(width: 150, height: 200)
+            controller.onDidChange = {
+                type in
+                self.retreiveMovieList(withType: type)
+            }
+        }
     }
 }
 
@@ -63,5 +54,34 @@ extension ViewController: MovieListViewDelegate {
     
     func didSelectRow(atIndex index: Int) {
         
+    }
+}
+
+// MARK: Private Methods
+private extension ViewController {
+    func retreiveMovieList(withType type: MoviesListType) {
+        MoviesFacade.retrieveMovieList(type: type) {
+            switch $0 {
+            case .success(let response):
+                self.movies = response.results
+                self.movieListView.reloadData()
+            default:
+                break
+            }
+        }
+    }
+    
+    func configureMovieListView() {
+        let frame = containerView.frame
+        let movieListView : MovieListView = UIDevice.current.userInterfaceIdiom == .pad ?
+            MovieListCollectionView(frame: frame) :
+            MovieListTableView(frame: frame)
+        let contentView = movieListView as! UIView
+        
+        movieListView.listDelegate = self
+        self.movieListView = movieListView
+        containerView.addSubview(contentView)
+        contentView.addConstraints(toFillSuperView: containerView)
+        contentView.backgroundColor = UIColor.clear
     }
 }
