@@ -186,7 +186,6 @@
 		F5A5CE0F1E4CACF00011DD22 /* MovieListView */ = {
 			isa = PBXGroup;
 			children = (
-				F501B4661E5B42FE001F8808 /* TransitionAnimator */,
 				F5A5CE3E1E4D46A70011DD22 /* CollectionView */,
 				F5A5CE101E4CAD140011DD22 /* TableView */,
 				F5A5CE081E4BCED10011DD22 /* MovieListView.swift */,
@@ -271,6 +270,7 @@
 		F5E6D3191E4A5A9D00E91D66 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F501B4661E5B42FE001F8808 /* TransitionAnimator */,
 				F5A5CE0F1E4CACF00011DD22 /* MovieListView */,
 				F50BD2AC1E37A41D008821F8 /* ViewController.swift */,
 				F501B4601E565B3C001F8808 /* MoviesCategoriesViewController.swift */,
