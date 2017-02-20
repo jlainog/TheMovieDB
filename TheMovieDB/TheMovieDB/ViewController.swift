@@ -14,10 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet var containerView : UIView!
     var movieListView : MovieListView!
     var movies : [MovieData]?
+    var selectedListType : MoviesListType = .nowPlaying
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMovieListView()
+        retreiveMovieList()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,10 +27,12 @@ class ViewController: UIViewController {
         if segue.identifier == "MoviesCategories" {
             let controller = segue.destination as! MoviesCategoriesViewController
             
+            controller.selectedListType = selectedListType
             controller.preferredContentSize = CGSize(width: 150, height: 200)
             controller.onDidChange = {
                 type in
-                self.retreiveMovieList(withType: type)
+                self.selectedListType = type
+                self.retreiveMovieList()
             }
         }
     }
@@ -59,8 +63,8 @@ extension ViewController: MovieListViewDelegate {
 
 // MARK: Private Methods
 private extension ViewController {
-    func retreiveMovieList(withType type: MoviesListType) {
-        MoviesFacade.retrieveMovieList(type: type) {
+    func retreiveMovieList() {
+        MoviesFacade.retrieveMovieList(type: selectedListType) {
             switch $0 {
             case .success(let response):
                 self.movies = response.results
