@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var movieListView : MovieListView!
     var movies : [MovieData]?
     var selectedListType : MoviesListType = .nowPlaying
+    fileprivate let animatorManager = SwipeTransitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,12 @@ extension ViewController: MovieListViewDelegate {
     }
     
     func didSelectRow(atIndex index: Int) {
+        let detailController = self.storyboard?.instantiateViewController(withIdentifier: String(describing: MovieDetailViewController.self)) as! MovieDetailViewController
         
+        detailController.movieData = movies?[index]
+        detailController.transitioningDelegate = animatorManager
+        animatorManager.addSwipeInteractiveTransition(toController: detailController)
+        present(detailController, animated: true)
     }
 }
 

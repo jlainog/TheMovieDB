@@ -11,6 +11,9 @@
 		F2C92F73C8E74998712331D4 /* Pods_TheMovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592420450FD16D5AD3154771 /* Pods_TheMovieDB.framework */; };
 		F501B45E1E5644BF001F8808 /* UIView+Contrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B45D1E5644BF001F8808 /* UIView+Contrainer.swift */; };
 		F501B4611E565B3C001F8808 /* MoviesCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B4601E565B3C001F8808 /* MoviesCategoriesViewController.swift */; };
+		F501B4631E5A1F73001F8808 /* SwipeTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B4621E5A1F73001F8808 /* SwipeTransitionManager.swift */; };
+		F501B4651E5AB03D001F8808 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B4641E5AB03D001F8808 /* MovieDetailViewController.swift */; };
+		F501B4681E5B4349001F8808 /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B4671E5B4349001F8808 /* SwipeInteractionController.swift */; };
 		F50BD2AB1E37A41D008821F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50BD2AA1E37A41D008821F8 /* AppDelegate.swift */; };
 		F50BD2AD1E37A41D008821F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50BD2AC1E37A41D008821F8 /* ViewController.swift */; };
 		F50BD2B01E37A41D008821F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50BD2AE1E37A41D008821F8 /* Main.storyboard */; };
@@ -55,6 +58,9 @@
 		592420450FD16D5AD3154771 /* Pods_TheMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F501B45D1E5644BF001F8808 /* UIView+Contrainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Contrainer.swift"; sourceTree = "<group>"; };
 		F501B4601E565B3C001F8808 /* MoviesCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesCategoriesViewController.swift; sourceTree = "<group>"; };
+		F501B4621E5A1F73001F8808 /* SwipeTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTransitionManager.swift; sourceTree = "<group>"; };
+		F501B4641E5AB03D001F8808 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		F501B4671E5B4349001F8808 /* SwipeInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
 		F50BD2A71E37A41D008821F8 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50BD2AA1E37A41D008821F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F50BD2AC1E37A41D008821F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +127,15 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		F501B4661E5B42FE001F8808 /* TransitionAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				F501B4621E5A1F73001F8808 /* SwipeTransitionManager.swift */,
+				F501B4671E5B4349001F8808 /* SwipeInteractionController.swift */,
+			);
+			name = TransitionAnimator;
+			sourceTree = "<group>";
+		};
 		F50BD29E1E37A41D008821F8 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +186,7 @@
 		F5A5CE0F1E4CACF00011DD22 /* MovieListView */ = {
 			isa = PBXGroup;
 			children = (
+				F501B4661E5B42FE001F8808 /* TransitionAnimator */,
 				F5A5CE3E1E4D46A70011DD22 /* CollectionView */,
 				F5A5CE101E4CAD140011DD22 /* TableView */,
 				F5A5CE081E4BCED10011DD22 /* MovieListView.swift */,
@@ -258,6 +274,7 @@
 				F5A5CE0F1E4CACF00011DD22 /* MovieListView */,
 				F50BD2AC1E37A41D008821F8 /* ViewController.swift */,
 				F501B4601E565B3C001F8808 /* MoviesCategoriesViewController.swift */,
+				F501B4641E5AB03D001F8808 /* MovieDetailViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -483,15 +500,18 @@
 				F5A5CE0B1E4BD10E0011DD22 /* MovieListTableView.swift in Sources */,
 				F501B45E1E5644BF001F8808 /* UIView+Contrainer.swift in Sources */,
 				F5E6D3111E3B06B700E91D66 /* MoviesFacade.swift in Sources */,
+				F501B4681E5B4349001F8808 /* SwipeInteractionController.swift in Sources */,
 				F5E6D30D1E3B069F00E91D66 /* MoviesService.swift in Sources */,
 				F501B4611E565B3C001F8808 /* MoviesCategoriesViewController.swift in Sources */,
 				F5E6D3161E3B06FA00E91D66 /* MoviesResponseData.swift in Sources */,
 				F5A5CE421E4D46DE0011DD22 /* MovieListCollectionCell.swift in Sources */,
 				F5A5CE091E4BCED10011DD22 /* MovieListView.swift in Sources */,
 				F5E6D3151E3B06FA00E91D66 /* MovieData.swift in Sources */,
+				F501B4631E5A1F73001F8808 /* SwipeTransitionManager.swift in Sources */,
 				F5E6D3121E3B06B700E91D66 /* TheMovieDBService.swift in Sources */,
 				F5E6D30E1E3B069F00E91D66 /* TheMovieDBResponse.swift in Sources */,
 				F5A5CE0D1E4BD3B80011DD22 /* MovieListTableCell.swift in Sources */,
+				F501B4651E5AB03D001F8808 /* MovieDetailViewController.swift in Sources */,
 				F50BD2AB1E37A41D008821F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
