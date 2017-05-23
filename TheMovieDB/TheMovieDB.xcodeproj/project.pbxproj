@@ -39,6 +39,7 @@
 		F5E6D3161E3B06FA00E91D66 /* MoviesResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D3141E3B06FA00E91D66 /* MoviesResponseData.swift */; };
 		F5E6D3181E3B070400E91D66 /* MoviesFacadeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6D3171E3B070400E91D66 /* MoviesFacadeTest.swift */; };
 		F5E6D31B1E4A62FD00E91D66 /* MovieListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E6D31A1E4A62FD00E91D66 /* MovieListTableCell.xib */; };
+		F5FB1B261ED33DA900678B68 /* ImageFrameTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB1B251ED33DA900678B68 /* ImageFrameTransitionAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		F5E6D3141E3B06FA00E91D66 /* MoviesResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesResponseData.swift; sourceTree = "<group>"; };
 		F5E6D3171E3B070400E91D66 /* MoviesFacadeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesFacadeTest.swift; sourceTree = "<group>"; };
 		F5E6D31A1E4A62FD00E91D66 /* MovieListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieListTableCell.xib; sourceTree = "<group>"; };
+		F5FB1B251ED33DA900678B68 /* ImageFrameTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFrameTransitionAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				F501B4621E5A1F73001F8808 /* SwipeTransitionManager.swift */,
+				F5FB1B251ED33DA900678B68 /* ImageFrameTransitionAnimation.swift */,
 				F501B4671E5B4349001F8808 /* SwipeInteractionController.swift */,
 			);
 			name = TransitionAnimator;
@@ -515,6 +518,7 @@
 				F5A5CE091E4BCED10011DD22 /* MovieListView.swift in Sources */,
 				F5E6D3151E3B06FA00E91D66 /* MovieData.swift in Sources */,
 				F501B4631E5A1F73001F8808 /* SwipeTransitionManager.swift in Sources */,
+				F5FB1B261ED33DA900678B68 /* ImageFrameTransitionAnimation.swift in Sources */,
 				F5E6D3121E3B06B700E91D66 /* TheMovieDBService.swift in Sources */,
 				F5E6D30E1E3B069F00E91D66 /* TheMovieDBResponse.swift in Sources */,
 				F5A5CE0D1E4BD3B80011DD22 /* MovieListTableCell.swift in Sources */,

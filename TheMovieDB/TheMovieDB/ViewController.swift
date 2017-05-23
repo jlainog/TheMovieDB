@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     var movieListView : MovieListView!
     var movies : [MovieData]?
     var selectedListType : MoviesListType = .nowPlaying
-    fileprivate let animatorManager = SwipeTransitionManager()
+    fileprivate var selectedIndex = 0
+    fileprivate let animatorManager = ImageFrameTransitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +30,21 @@ class ViewController: UIViewController {
             let controller = segue.destination as! MoviesCategoriesViewController
             
             controller.selectedListType = selectedListType
-            controller.preferredContentSize = CGSize(width: 150, height: 200)
+            controller.preferredContentSize = CGSize(width: 150, height: 300)
             controller.onDidChange = {
                 type in
                 self.selectedListType = type
                 self.retreiveMovieList()
             }
         }
+    }
+}
+
+extension ViewController : ImageFrameTransitionAnimationProtocol {
+    var transitionSourceImageView : UIImageView {
+        let cell = movieListView.cell(atIndex: selectedIndex)!
+        
+        return cell.movieImageView
     }
 }
 
@@ -60,6 +69,7 @@ extension ViewController: MovieListViewDelegate {
     func didSelectRow(atIndex index: Int) {
         let detailController = self.storyboard?.instantiateViewController(withIdentifier: String(describing: MovieDetailViewController.self)) as! MovieDetailViewController
         
+        selectedIndex = index
         detailController.movieData = movies?[index]
         detailController.transitioningDelegate = animatorManager
         animatorManager.addSwipeInteractiveTransition(toController: detailController)

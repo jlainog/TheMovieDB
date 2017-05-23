@@ -24,3 +24,10 @@ class MovieDetailViewController: UIViewController {
     }
     
 }
+
+extension MovieDetailViewController : ImageFrameTransitionAnimationProtocol {
+    var transitionSourceImageView : UIImageView {
+        return UIDevice.current.userInterfaceIdiom == .pad ?
+            posterImageView : backdropImageView
+    }
+}
