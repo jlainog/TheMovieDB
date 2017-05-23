@@ -14,6 +14,8 @@
 		F501B4631E5A1F73001F8808 /* SwipeTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B4621E5A1F73001F8808 /* SwipeTransitionManager.swift */; };
 		F501B4651E5AB03D001F8808 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B4641E5AB03D001F8808 /* MovieDetailViewController.swift */; };
 		F501B4681E5B4349001F8808 /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B4671E5B4349001F8808 /* SwipeInteractionController.swift */; };
+		F501B46A1E60D4AD001F8808 /* MovieWatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B4691E60D4AD001F8808 /* MovieWatchList.swift */; };
+		F501B46C1E60D59C001F8808 /* MovieWatchListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501B46B1E60D59C001F8808 /* MovieWatchListTest.swift */; };
 		F50BD2AB1E37A41D008821F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50BD2AA1E37A41D008821F8 /* AppDelegate.swift */; };
 		F50BD2AD1E37A41D008821F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50BD2AC1E37A41D008821F8 /* ViewController.swift */; };
 		F50BD2B01E37A41D008821F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50BD2AE1E37A41D008821F8 /* Main.storyboard */; };
@@ -61,6 +63,8 @@
 		F501B4621E5A1F73001F8808 /* SwipeTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTransitionManager.swift; sourceTree = "<group>"; };
 		F501B4641E5AB03D001F8808 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		F501B4671E5B4349001F8808 /* SwipeInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
+		F501B4691E60D4AD001F8808 /* MovieWatchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieWatchList.swift; sourceTree = "<group>"; };
+		F501B46B1E60D59C001F8808 /* MovieWatchListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieWatchListTest.swift; sourceTree = "<group>"; };
 		F50BD2A71E37A41D008821F8 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50BD2AA1E37A41D008821F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F50BD2AC1E37A41D008821F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				F5E6D3031E3B065A00E91D66 /* Core */,
 				F5E6D3061E3B067100E91D66 /* Movies */,
 				F50BD2AA1E37A41D008821F8 /* AppDelegate.swift */,
+				F501B4691E60D4AD001F8808 /* MovieWatchList.swift */,
 				F50BD2AE1E37A41D008821F8 /* Main.storyboard */,
 				F50BD2B11E37A41D008821F8 /* Assets.xcassets */,
 				F50BD2B31E37A41D008821F8 /* LaunchScreen.storyboard */,
@@ -175,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A5CE3A1E4D0D8B0011DD22 /* ViewControllerTest.swift */,
+				F501B46B1E60D59C001F8808 /* MovieWatchListTest.swift */,
 				F5A5CE3C1E4D29830011DD22 /* MovieListViewTest.swift */,
 				F5E6D3171E3B070400E91D66 /* MoviesFacadeTest.swift */,
 				F50BD2BF1E37A41D008821F8 /* TheMovieDBTests.swift */,
@@ -504,6 +510,7 @@
 				F5E6D30D1E3B069F00E91D66 /* MoviesService.swift in Sources */,
 				F501B4611E565B3C001F8808 /* MoviesCategoriesViewController.swift in Sources */,
 				F5E6D3161E3B06FA00E91D66 /* MoviesResponseData.swift in Sources */,
+				F501B46A1E60D4AD001F8808 /* MovieWatchList.swift in Sources */,
 				F5A5CE421E4D46DE0011DD22 /* MovieListCollectionCell.swift in Sources */,
 				F5A5CE091E4BCED10011DD22 /* MovieListView.swift in Sources */,
 				F5E6D3151E3B06FA00E91D66 /* MovieData.swift in Sources */,
@@ -520,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F501B46C1E60D59C001F8808 /* MovieWatchListTest.swift in Sources */,
 				F5E6D3181E3B070400E91D66 /* MoviesFacadeTest.swift in Sources */,
 				F5A5CE3D1E4D29830011DD22 /* MovieListViewTest.swift in Sources */,
 				F50BD2C01E37A41D008821F8 /* TheMovieDBTests.swift in Sources */,
