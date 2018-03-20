@@ -21,8 +21,14 @@ class MovieDetailViewController: UIViewController {
         posterImageView.af_setImage(withURL: URL(string: movieData.posterPath)!)
         backdropImageView.af_setImage(withURL: URL(string: movieData.backdropPath)!)
         titleLabel.text = movieData.title
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissDetail))
+        view.addGestureRecognizer(tapGesture)
     }
     
+    func dismissDetail() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension MovieDetailViewController : ImageFrameTransitionAnimationProtocol {

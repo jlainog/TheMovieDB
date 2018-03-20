@@ -43,6 +43,7 @@ class ImageFrameTransitionManager : NSObject, UIViewControllerTransitioningDeleg
 
 class ImageFrameTransitionAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     var sourceController : UIViewController!
+    var blurVisualEffectView = UIVisualEffectView()
     var state : TransitionAnimatorState = TransitionAnimatorState.presenting
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -56,10 +57,13 @@ class ImageFrameTransitionAnimation: NSObject, UIViewControllerAnimatedTransitio
         
         container.addSubview(toContoller.view)
         container.addSubview(fromContoller.view)
+        container.addSubview(blurVisualEffectView)
         container.addSubview(imageview)
         destinationController.view.layoutSubviews()
         
         toContoller.view.alpha = 1.0
+        blurVisualEffectView.frame = destinationController.view.bounds
+        blurVisualEffectView.effect = (state == .presenting ? nil : UIBlurEffect(style: .dark))
         UIView.animate(withDuration: duration,
                        animations: {
                         fromContoller.view.alpha = 0.0
@@ -78,8 +82,16 @@ class ImageFrameTransitionAnimation: NSObject, UIViewControllerAnimatedTransitio
                 }
                 
                 imageview.removeFromSuperview()
+                self.blurVisualEffectView.removeFromSuperview()
             })
         }
+        
+        UIView.animate(withDuration: duration,
+                      animations: {
+            self.blurVisualEffectView.effect = (self.state == .presenting ? UIBlurEffect(style: .extraLight) : nil)
+        }, completion: { (completed) in
+            self.blurVisualEffectView.removeFromSuperview()
+        })
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

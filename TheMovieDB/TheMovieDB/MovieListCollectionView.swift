@@ -50,7 +50,7 @@ private extension MovieListCollectionView {
         viewFlowLayout.minimumInteritemSpacing = middleSpaceBetweenCells
         viewFlowLayout.minimumLineSpacing = bottomSpaceBetweenCells
         viewFlowLayout.sectionInset = UIEdgeInsetsMake(topPadding, leftPadding, 0, rightPadding)
-        
+        viewFlowLayout.scrollDirection = .horizontal
         backgroundColor = UIColor.clear
         collectionViewLayout = viewFlowLayout
     }
