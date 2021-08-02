@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  TheMovieDB
 //
-//  Created by Jaime Laino on 1/24/17.
-//  Copyright © 2017 Globant. All rights reserved.
+//  Created by Jaime Laino on 8/2/21.
 //
 
 import UIKit
@@ -12,14 +11,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
-
