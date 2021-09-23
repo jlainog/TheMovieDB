@@ -35,22 +35,22 @@ class GetMovieData {
             return movies
         }
         
-        var movies: [Movie] = []
+        var filteredMovies: [Movie] = []
         
         for movie in movies {
             
-            let unwrappedTitle = movie.title ?? ""
-            
-            let unwrappedOriginalTitle = movie.originalLanguage ?? ""
-            
-            if unwrappedTitle.lowercased().contains(searchInput.lowercased()) || unwrappedOriginalTitle.lowercased().contains(searchInput.lowercased()){
-                movies.append(movie)
+            if movie.title!.lowercased().contains(searchInput.lowercased()) || movie.originalLanguage!.lowercased().contains(searchInput.lowercased()){
+                filteredMovies.append(movie)
             }
         }
-        return movies
+        return filteredMovies
     }
 }
 
+
+//let unwrappedTitle = movie.title ?? ""
+//
+//let unwrappedOriginalTitle = movie.originalLanguage ?? ""
 
 //if let unwrappedTitle = movie.title {
 //    if unwrappedTitle.lowercased().contains(searchInput.lowercased()) {

@@ -45,8 +45,8 @@ extension HomeScreenVC: UITableViewDataSource {
         }
         //IMG
         cell.movieName.text = movie.title
-        cell.language.text = "Language: \(String(describing: movie.originalLanguage))"
-        cell.rating.text = "Rating: \(String(describing: movie.rating))"
+        cell.language.text = "Language: \(movie.originalLanguage ?? "")"
+        cell.rating.text = "Rating: \(movie.rating ?? 0)"
         return cell
     }
 }
