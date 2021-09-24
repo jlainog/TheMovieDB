@@ -23,6 +23,11 @@ class HomeScreenVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.searchTextField.textColor = UIColor.green
+        searchBar.searchTextField.backgroundColor = UIColor.black
+        searchBar.searchTextField.leftView?.tintColor = UIColor.green
+        searchBar.subviews[0].tintColor = UIColor.green
+        
         getMovieData.getMovies(completion: { [weak self] result in self?.movies = result
             
             DispatchQueue.main.async { [weak self] in self?.tableView.reloadData()
@@ -45,11 +50,10 @@ extension HomeScreenVC: UITableViewDataSource {
         }
         
         
-        
         func setImage(from url: String) {
             guard let imageURL = URL(string: url) else { return }
 
-                // just not to cause a deadlock in UI!
+                // So we don't cause a deadlock in the UI:
             DispatchQueue.global().async {
                 guard let imageData = try? Data(contentsOf: imageURL) else { return }
 
@@ -60,10 +64,10 @@ extension HomeScreenVC: UITableViewDataSource {
             }
         }
         
-            setImage (from: "https://image.tmdb.org/t/p/w500\(movie.imagePath!)" )
+        setImage (from: "https://image.tmdb.org/t/p/w500\(movie.imagePath!)")
 
         cell.movieName.text = movie.title
-        cell.language.text = "Language: \(movie.originalLanguage ?? "")"
+        cell.language.text = "Language: \(movie.originalLanguage?.uppercased() ?? "")"
         cell.rating.text = "Rating: \(movie.rating ?? 0)"
         return cell
     }
