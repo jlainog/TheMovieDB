@@ -26,7 +26,7 @@ struct Movie: Decodable {
 
 struct MoviesGroup: Decodable {
     private enum CodingKeys: String, CodingKey {
-        case movies = "items"
+        case movies = "results"
     }
     var movies: [Movie]
 }

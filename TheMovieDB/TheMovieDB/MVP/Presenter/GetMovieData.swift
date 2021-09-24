@@ -14,7 +14,7 @@ class GetMovieData {
     var jsonParser = JsonParser()
     
     public func getMovies (completion: @escaping ([Movie]) -> Void) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/list/2?api_key=1f4d7de5836b788bdfd897c3e0d0a24b&language=en-US") else {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated?api_key=1f4d7de5836b788bdfd897c3e0d0a24b&language=en-US&page=1") else {
             completion([])
             return
         }
@@ -29,7 +29,7 @@ class GetMovieData {
         task.resume()
     }
     
-    func filter(searchInput: String) -> [Movie] {
+    func filter(searchInput: String) -> [Movie] {//should be in the model
         
         if searchInput == "" {
             return movies

@@ -28,6 +28,9 @@ class HomeScreenVC: UIViewController {
         searchBar.searchTextField.leftView?.tintColor = UIColor.green
         searchBar.subviews[0].tintColor = UIColor.green
         
+//        tableView.tableHeaderView = UIView()
+//        tableView.tableHeaderView!.backgroundColor = UIColor.black
+        
         getMovieData.getMovies(completion: { [weak self] result in self?.movies = result
             
             DispatchQueue.main.async { [weak self] in self?.tableView.reloadData()
