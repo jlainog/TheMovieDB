@@ -43,7 +43,25 @@ extension HomeScreenVC: UITableViewDataSource {
         else {
             return UITableViewCell()
         }
-        //IMG
+        
+        
+        
+        func setImage(from url: String) {
+            guard let imageURL = URL(string: url) else { return }
+
+                // just not to cause a deadlock in UI!
+            DispatchQueue.global().async {
+                guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+                let image = UIImage(data: imageData)
+                DispatchQueue.main.async {
+                    cell.imageCell.image = image
+                }
+            }
+        }
+        
+            setImage (from: "https://image.tmdb.org/t/p/w500\(movie.imagePath!)" )
+
         cell.movieName.text = movie.title
         cell.language.text = "Language: \(movie.originalLanguage ?? "")"
         cell.rating.text = "Rating: \(movie.rating ?? 0)"
