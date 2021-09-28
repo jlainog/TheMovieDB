@@ -13,6 +13,6 @@ class JsonParser {
         
         let result = (try? JSONDecoder().decode(MoviesGroup.self, from: jsonData))
 
-        return result!.movies
+        return result?.movies ?? []
     }
 }
